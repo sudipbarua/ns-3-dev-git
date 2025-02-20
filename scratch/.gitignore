@@ -6,3 +6,7 @@
 !subdir/
 !scratch-simulator.cc
 !CMakeLists.txt
+!adr-simulation.cc
+!adr-simulation_copy.cc
+!concepts/
+!test.cc
