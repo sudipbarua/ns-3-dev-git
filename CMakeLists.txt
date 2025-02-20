@@ -197,3 +197,6 @@ write_configtable()
 
 # Export package targets when installing
 ns3_cmake_package()
+
+# To suppress development warnings (-Wno-dev) in CMake, this flag specifying it in the CMakeLists.txt file for ns3 build.
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-dev")
