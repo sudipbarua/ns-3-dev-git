@@ -20,6 +20,8 @@ This file is a best-effort approach to solving this issue; we will do our best b
 * (wifi) Changes have been made to the `WifiRemoteStationManager` interface for what concerns the update of the frame retry count of the MPDUs and the decision of dropping MPDUs (possibly based on the max retry limit). The `NeedRetransmission` method has been replaced by the `GetMpdusToDropOnTxFailure` method and the `DoNeedRetransmission` method has been replaced by the `DoGetMpdusToDropOnTxFailure` method. Also, the `DoIncrementRetryCountOnTxFailure` method has been added to implement custom policies for the update of the frame retry count of MPDUs upon transmission failure.
 * (applications) Added an `OnOffState` trace source to `OnOffApplication`, to track whether the application is transmitting or not.
 * (zigbee) Added Zigbee module support. The module includes a NWK layer with joining and routing capabilities. No APS layer included.
+* (antenna) Add `SymmetricAdjacencyMatrix` utility class, used to track the necessity of channel state between every `PhasedArrayModel` pair.
+* (wifi) Added a new **RobustAVStreamingSupported** attribute to `WifiMac` to enable 802.11aa features (GCR).
 
 ### Changes to existing API
 
@@ -32,6 +34,7 @@ This file is a best-effort approach to solving this issue; we will do our best b
 * (tap-bridge) Removed unused gateway option from tap-creator.
 * (wifi) Added a new **ProtectedIfResponded** attribute to `FrameExchangeManager` to disable RTS/CTS protection for stations that have already responded to a frame requiring acknowledgment in the same TXOP, even if such frame had not been protected by RTS/CTS. The default value is true, even though it represents a change with respect to the previous behavior, because it is likely a more realistic choice.
 * (wifi) Deprecated setters/getters of the {Ht,Vht,He}Configuration classes that trivially set/get member variables, which have been made public and hence accessible to users.
+* (wifi) Trace source `QosTxop::BaEstablished` is extended to support GCR block ack agreements.
 
 ### Changes to build system
 

@@ -48,6 +48,7 @@ The required Doxygen version for documentation generation is version 1.11.
 - (wifi) Add support for exchanging 802.11be Multi-Link Probe Request frames. Currently, the default association manager does not instruct the MAC to transmit a Multi-Link Probe Request frame, though.
 - (wifi) 2004! - Add Wi-Fi channel occupancy statistics helper
 - (wifi) 2009! - Added WifiTxStatsHelper for Wi-Fi MAC-level tracing.
+- (wifi) - Added support for 802.11aa groupcast with retries (GCR). Both unsolicited retries (GCR-UR) and Block Ack (GCR-BA) mechanisms are implemented.
 
 ### Bugs fixed
 
@@ -60,6 +61,8 @@ The required Doxygen version for documentation generation is version 1.11.
 - (wifi) Clear PSDU map if no immediate response expected with BAR-BA ack sequence
 - (wifi) Fix S-MPDU TX duration computation with BlockAck ack policy
 - (wifi) Fix missing DSSS Param Set in Probe Request sent over 2.4 GHz links
+- (spectrum) Trigger 3GPP channel updates after changes to antenna attributes
+- (wifi) #1104 - Fix wrong calculation of start sequence number
 
 ## Release 3.43
 
